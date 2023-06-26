@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --clr-primary: hsl(25, 97%, 53%);
+    --clr-primary-soft: hsl(25, 60%, 53%);
+    --clr-neutral-1: hsl(0, 0%, 100%);
+    --clr-neutral-1-tp: hsl(0, 0%, 100%, 0.8);
+    --clr-neutral-2: hsl(217, 12%, 63%);
+    --clr-neutral-3: hsl(216, 12%, 54%);
+    --clr-neutral-3-tp: hsla(216, 12%, 54%, 0.1);
+    --clr-neutral-4: hsl(213, 19%, 18%);
+    --clr-neutral-4-grad: hsl(213, 19%, 12%);
+    --clr-neutral-5: hsl(216, 12%, 8%);
+    --clr-attribution: hsl(228, 45%, 64%);
+
+    --ff: 'Overpass', sans-serif;
+}
+
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    list-style: none;
+}
+
+picture,
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    background-color: var(--clr-neutral-5);
+    padding: 1.5rem;
+    font-family: var(--ff);
+}
+
+.sr-only {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    color: var(--clr-neutral-1);
+}
+
+/* ---------- MAIN (Cards) ---------- */
+.card {
+    display: grid;
+    gap: 1rem;
+    background-image: linear-gradient(var(--clr-neutral-4), var(--clr-neutral-4-grad));
+    border-radius: 1rem;
+    padding: 1.75rem 1.5rem;
+}
+
+.star,
+label {
+    display: grid;
+    place-content: center;
+    background-color: var(--clr-neutral-3-tp);
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+}
+
+.star {
+    margin-bottom: 0.25rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--clr-neutral-1);
+}
+
+.description {
+    font-size: 0.88rem;
+    color: var(--clr-neutral-2);
+    line-height: 1.58;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 0.1rem solid transparent;
+    color: transparent;
+}
+
+.show {
+    border: 0.1rem solid var(--clr-primary-soft);
+    color: var(--clr-primary-soft);
+}
+
+input {
+    display: none;
+}
+
+label {
+    font-weight: bold;
+    color: var(--clr-neutral-3);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+label:hover,
+label:focus-visible {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-1);
+}
+
+input:checked+label {
+    background-color: var(--clr-neutral-2);
+    color: var(--clr-neutral-1);
+    transform: scale(1.1);
+}
+
+.btn {
+    background-color: var(--clr-primary);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    font-size: 0.94rem;
+    font-weight: bold;
+    color: var(--clr-neutral-1-tp);
+    padding: 1.06rem 0 0.8rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background-color: var(--clr-neutral-1);
+    color: var(--clr-primary);
+}
+
+.card-ty {
+    justify-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.selection {
+    background-color: var(--clr-neutral-3-tp);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: var(--clr-primary-soft);
+    margin: 0.5rem 0 0.75rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- Desktop ---------- */
+@media screen and (min-width: 26rem) {
+    .card {
+        max-width: 25.75rem;
+        border-radius: 2rem;
+        padding: 2rem 2.4rem 2rem 2rem;
+        gap: 0.85rem;
+        margin-top: 0.4rem;
+    }
+
+    .star {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 1.45rem;
+    }
+
+    .title {
+        font-size: 1.74rem;
+    }
+
+    .description {
+        font-size: 0.94rem;
+    }
+
+    label {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.1rem;
+    }
+
+    fieldset {
+        margin-bottom: 1.9rem;
+    }
+
+    .card-ty {
+        padding: 3rem 2.25rem;
+    }
+
+    .selection {
+        margin: 1rem 0 1.5rem;
+    }
+}
+
+/* ---------- FOOTER ---------- */
+.attribution {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--clr-neutral-1);
+}
+
+.attribution a {
+    color: var(--clr-attribution);
+}
+
+@media screen and (min-height: 50rem) {
+    .attribution {
+        position: fixed;
+        bottom: 1rem;
+        justify-self: center;
+    }
+
+    header {
+        position: fixed;
+        top: 1rem;
+        justify-self: center;
+    }
+}
