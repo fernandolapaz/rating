@@ -110,10 +110,6 @@ fieldset {
     color: var(--clr-primary-soft);
 }
 
-input {
-    display: none;
-}
-
 label {
     font-weight: bold;
     color: var(--clr-neutral-3);
@@ -131,6 +127,10 @@ input:checked+label {
     background-color: var(--clr-neutral-2);
     color: var(--clr-neutral-1);
     transform: scale(1.1);
+}
+
+input:focus-visible+label {
+    outline: 0.2rem solid var(--clr-neutral-3);
 }
 
 .btn {
