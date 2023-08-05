@@ -15,15 +15,20 @@ btn.addEventListener('click', (e) => {
     for (r of ratings) {
         if (r.checked) {
             selected = r.value
-            rating.innerHTML = selected
+            rating.innerText = selected
 
             cardRating.classList.toggle('hidden')
             cardTy.classList.toggle('hidden')
+            cardTy.setAttribute('role', 'alert')
         }
     }
 
     if (!selected) {
+        const firstInput = document.getElementById('1')
+
         box.classList.add('show')
+        firstInput.focus()
+        firstInput.setAttribute('aria-describedby', 'legend')
     }
 })
 

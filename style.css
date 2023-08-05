@@ -16,7 +16,7 @@
     --ff: 'Overpass', sans-serif;
 }
 
-/* ---------- RESET ---------- */
+/* RESET */
 *,
 *::before,
 *::after {
@@ -42,6 +42,20 @@ select {
     font: inherit;
 }
 
+/* Accessibility */
+*:focus-visible {
+    outline-offset: 0.15rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    color: var(--clr-neutral-1);
+}
+
+/* BODY */
 body {
     min-height: 100vh;
     line-height: 1;
@@ -53,15 +67,7 @@ body {
     font-family: var(--ff);
 }
 
-.sr-only {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    color: var(--clr-neutral-1);
-}
-
-/* ---------- MAIN (Cards) ---------- */
+/* MAIN (Cards) */
 .card {
     display: grid;
     gap: 1rem;
@@ -171,7 +177,7 @@ input:focus-visible+label {
     display: none;
 }
 
-/* ---------- Desktop ---------- */
+/* Desktop */
 @media screen and (min-width: 26rem) {
     .card {
         max-width: 25.75rem;
@@ -214,7 +220,7 @@ input:focus-visible+label {
     }
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 .attribution {
     font-size: 0.8rem;
     text-align: center;
